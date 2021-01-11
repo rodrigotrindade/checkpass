@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title></title>
+    <style>
+        body,html{ font-family: 'Ubuntu', sans-serif; color: #FFF; background-color:#282828; }
+        .navbar{ background-color: #000; padding: 0; }
+        .navbar h1{ font-size: 36px !important; font-weight: normal; margin-bottom: 0; }
+        .navbar h2{ font-size: 24px !important; font-weight: normal; color: #CCC; }
+        .bg-vd{ background-color: #0ED145; color: #FFF; }
+        .bg-vm{ background-color: #F00; color: #FFF; }
+        .bg-cz{ background-color: #DDD; color: #666; }
+        .bg-az{ background-color: #4170f0; color: #FFF; }
+        .auth{ font-size: 14px; }
+        .auth small{ font-size: 16px; padding-left: 5px; }
+        .icon{ margin: 10px; font-size: 24px; color:#FFF !important; }
+        .btns{ height: 60px; width: 110px; padding-bottom: 40px; font-weight: 600; font-size: 30px; border-top: 30px solid transparent; border-bottom: 30px solid transparent;  }
+        .btns a{ color: #FFF; text-decoration: none; padding:0; }
+        .arrows{ border-top: 50px solid transparent; border-bottom: 50px solid transparent; }
+        .arrows-2{ border-top: 20px solid transparent; border-bottom: 20px solid transparent; }
+        .arrow-right{ border-left: 50px solid #0ED145; }
+        .arrow-left{ border-right: 50px solid #F00; }
+        .arrow-2-right{ border-left: 25px solid #4170f0; }
+        .arrow-2-left{ border-right: 25px solid #DDD; }
+        .info{ font-size: 16px; font-style: italic; }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar text-center">
+        <h1 class="text-center w-100">João da Silva</h1>
+        <h2 class="text-center w-100">CPF: 767.8 ***</h2>
+    </nav>
+    <div class="container">
+        <div class="row bg-vd">
+            <div class="col-8 p-2">
+                <span class="auth">Autorizado por: <small>Ana Maria Braga</small></span><br>
+                <span class="auth">Quando?<small>1:03 horas atrás</small></span>
+            </div>
+            <div class="col-4 p-2">
+                <i class="fa fa-check float-right icon"></i>
+                <!-- <i class="fa fa-times float-right icon"></i> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-0">
+                <img class="mw-100" src="img/user.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 p-0">
+                <div class="bg-vd btns float-left text-center"><a href="#">OK</a></div>
+                <div class="arrows arrow-right float-left"></div>
+            </div>
+            <div class="col-6 p-0">
+                <div class="bg-vm btns float-right text-center"><a href="#">PARE</a></div>
+                <div class="arrows arrow-left float-right"></div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-2 p-0 arrows-2 arrow-2-left"></div>
+            <div class="col-10 p-2 bg-cz info">Origem: Lorem ipsum</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-10 p-2 text-right bg-az info">Destino: Dolor sit amet</div>
+            <div class="col-2 arrows-2 arrow-2-right"></div>  
+        </div>
+    </div>
+</body>
+</html>
