@@ -17,18 +17,21 @@
         .bg-vm{ background-color: #F00; color: #FFF; }
         .bg-cz{ background-color: #DDD; color: #666; }
         .bg-az{ background-color: #4170f0; color: #FFF; }
-        .auth{ font-size: 14px; }
+        .bg-br{ background-color: #FFF; color: #000; }
+        .bl-vd{ border-left: 5px solid #0ED145; }
+        .bl-lr{ border-left: 5px solid #d1b40e; }
+        .auth{ font-size: 16px; color: #000; }
         .auth small{ font-size: 16px; padding-left: 5px; }
-        .icon{ margin: 10px; font-size: 24px; color:#FFF !important; }
-        .btns{ height: 50px; width: 110px; padding-bottom: 30px; font-weight: 600; font-size: 30px; border-top: 20px solid transparent; border-bottom: 30px solid transparent;  }
+        .icon{ margin: 10px; font-size: 24px; color:#000 !important; }
+        .centro{ padding-top: 28px; font-size: 16px; }
+        .btns{ height: 50px; width: 110px; padding-bottom: 30px; font-weight: 500; font-size: 20px; border-top: 25px solid transparent; border-bottom: 30px solid transparent;  }
         .btns a{ color: #FFF; text-decoration: none; padding:0; }
         .arrows{ border-top: 40px solid transparent; border-bottom: 40px solid transparent; }
-        .arrows-2{ border-top: 20px solid transparent; border-bottom: 20px solid transparent; }
         .arrow-right{ border-left: 40px solid #0ED145; }
         .arrow-left{ border-right: 40px solid #F00; }
-        .arrow-2-right{ border-left: 25px solid #4170f0; }
-        .arrow-2-left{ border-right: 25px solid #DDD; }
         .info{ font-size: 16px; font-style: italic; }
+        .info small{ font-size:12px; font-style: normal !important; color: #666 !important; }
+        .arrow-down { position: relative; top: -5px; content: ""; display: inline-block; width: 35px;  height: 35px; border-right: 0.4em solid #6b6b6b; border-top: 0.4em solid #6b6b6b; transform: rotate(135deg); }
     </style>
 </head>
 
@@ -54,22 +57,34 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6 p-0">
-                <div class="bg-vd btns float-left text-center"><a href="#">OK</a></div>
-                <div class="arrows arrow-right float-left"></div>
+            <div class="col-4 p-0">
+                <div class="bg-vd btns float-left text-center"><a href="#">LIBERAR</a></div>
             </div>
-            <div class="col-6 p-0">
-                <div class="bg-vm btns float-right text-center"><a href="#">PARE</a></div>
-                <div class="arrows arrow-left float-right"></div>
+            <div class="col-4">
+                <div class="text-center centro">ENTRADA</div>
             </div>
-        </div>
-        <div class="row mt-2 mb-2">
-            <div class="col-2 p-0 arrows-2 arrow-2-left"></div>
-            <div class="col-10 p-2 bg-cz info">Origem: Lorem ipsum</div>
+            <div class="col-4 p-0">
+                <div class="bg-vm btns float-right text-center"><a href="#">REJEITAR</a></div>
+            </div>
         </div>
         <div class="row mt-2">
-            <div class="col-10 p-2 text-right bg-az info">Destino: Dolor sit amet</div>
-            <div class="col-2 arrows-2 arrow-2-right"></div>  
+            <div class="col-5"></div>
+            <div class="col-2">
+                <div class="arrow-down"></div>
+            </div>
+            <div class="col-5"></div>
+        </div>
+        <div class="row mt-3 mb-2">
+            <div class="col-12 p-2 bg-br info bl-lr">
+                <small>Origem:</small><br>
+                Lorem ipsum
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 p-2 bg-br info bl-vd">
+                <small>Destino:</small><br>
+                Dolor sit amet
+            </div>
         </div>
     </div>
 </body>
