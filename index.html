@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <title></title>
     <style>
-        body,html{ font-family: 'Ubuntu', sans-serif; color: #FFF; background-color:#282828; }
+        body,html{ font-family: 'Ubuntu', sans-serif; color: #FFF; background-color:#282828; max-width: 375px !important; }
         .navbar{ background-color: #000; padding: 0; }
         .navbar h1{ font-size: 30px !important; font-weight: normal; margin-bottom: 0; }
         .navbar h2{ font-size: 18px !important; font-weight: normal; color: #CCC; }
@@ -24,7 +24,7 @@
         .auth small{ font-size: 16px; padding-left: 5px; }
         .icon{ margin: 10px; font-size: 24px; color:#000 !important; }
         .centro{ padding-top: 28px; font-size: 16px; }
-        .btns{ height: 50px; width: 110px; padding-bottom: 30px; font-weight: 500; font-size: 20px; border-top: 25px solid transparent; border-bottom: 30px solid transparent;  }
+        .btns{ height: 90px; width: 110px; font-weight: 500; font-size: 20px; border: none;  }
         .btns a{ color: #FFF; text-decoration: none; padding:0; }
         .arrows{ border-top: 40px solid transparent; border-bottom: 40px solid transparent; }
         .arrow-right{ border-left: 40px solid #0ED145; }
@@ -57,15 +57,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-4 p-0">
-                <div class="bg-vd btns float-left text-center"><a href="liberar.html">LIBERAR</a></div>
-            </div>
-            <div class="col-4">
-                <div class="text-center centro">ENTRADA</div>
-            </div>
-            <div class="col-4 p-0">
-                <div class="bg-vm btns float-right text-center"><a href="rejeitar.html">REJEITAR</a></div>
-            </div>
+            <form method ="post" action='/onboarding/{{delivery_transaction_id}}'></form>
+                <div class="col-4 p-0">
+                    <button type="submit" name="checkin_liberado" value="checkin_liberado" class="inputs bg-vd btns float-left text-center">LIBERAR</button>
+                </div>
+                <div class="col-4">
+                    <div class="text-center centro">ENTRADA</div>
+                </div>
+                <div class="col-4 p-0">
+                    <button type="submit" name="checkin_rejeitado" value="checkin_rejeitado" class="inputs bg-vm btns float-right text-center">REJEITAR</button>
+                </div>
+            </form>
         </div>
         <div class="row mt-2">
             <div class="col-5"></div>
