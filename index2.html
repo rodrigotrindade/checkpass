@@ -33,6 +33,12 @@
         .info small{ font-size:12px; font-style: normal !important; color: #666 !important; }
         .arrow-down { position: relative; margin-left: 40px; content: ""; display: inline-block; width: 35px;  height: 35px; border-right: 0.4em solid #6b6b6b; border-top: 0.4em solid #6b6b6b; transform: rotate(135deg); }
         *{ outline: none; }
+        @media (min-width: 576px){
+            .container {
+                max-width: 812px !important;
+            }
+            .arrow-down { margin-left: 20px; }
+        }
         @media (min-width: 768px){
             .container {
                 max-width: 812px !important;
