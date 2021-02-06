@@ -249,10 +249,10 @@
             createFavos(jsonPython);
 
             // REFRESH CONTÍNUO
-            // setInterval(function(){
-            //     createFavos(jsonPython);
-            //     // console.log("Refresh!");
-            // },tempoRefresh*1000);       
+            setInterval(function(){
+                createFavos(jsonPython);
+                // console.log("Refresh!");
+            },tempoRefresh*1000);       
         });
 
         function createFavos(json){
