@@ -30,124 +30,26 @@
         body,html{ font-family: 'Ubuntu', sans-serif; }
         .container{ max-width: 100% !important; }
         .numero{ color: #000; }
-        .numero h1{ font-size: 80px; }
-        .numero h3{ font-size: 30px; }
-
-        .ltx-hex {
-            overflow: hidden;
-            display: inline-block;
-            width: 154px;
-            height: 133.364px;
-            transform: rotate(-30deg) skewX(30deg);
-        }
-
-        .ltx-hex > .ltx-hex-inner,
-        .ltx-hex > .ltx-hex-inner:before {
-            display: block;
-            overflow: hidden;
-            width: inherit;
-            height: inherit;
-            border-radius: inherit;
-        }
-
-        .ltx-hex .ltx-hex-inner{
-            transform: skewX(-30deg) rotate(60deg) skewX(30deg);
-        }
-        
-        .ltx-hex .ltx-hex-inner:before {
-            transform: skewX(-30deg) rotate(60deg) skewX(30deg);
-            background-color: var(--cy);
-            content: '';
-        }
-        
-        .ltx-tech > .wpb_column:nth-child(2) > div {
-            -webkit-background-clip: padding-box;
-            -moz-background-clip: padding;
-            background-clip: padding-box;
-            padding: 0 130px 0 100px;
-        }
+        .numero ul{ margin: 0; padding: 0; }
+        .numero ul li{ display: inline !important; vertical-align: middle; }
+        .numero .quantidade{ font-size: 60px; }
+        .numero .label{ font-size: 20px; padding-left: 20px; }
 
         .services-sc{ margin-top: 5%; }
 
-        .services-sc.layout-icon-row article .ltx-hex-wrapper,
-        .services-sc.layout-icon-row article .ltx-hex {
-            width: 150px;
-            height: 160.52px;
-            margin: 0 3% 0 !important;
-        }
-
-        .services-sc.layout-icon-row article .ltx-hex-shadow {
-            top: 0;
-            left: 0;
-            position: absolute;
-            -webkit-filter: blur(5px);
-            -moz-filter: blur(5px);
-            -ms-filter: blur(5px);
-            filter: blur(5px);
-            zoom: 1;
-            filter: alpha(opacity=10);
-            -webkit-opacity: 0.3;
-            -moz-opacity: 0.3;
-            opacity: 0.31;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-        }
-
-        .services-sc.layout-icon-row article .ltx-hex-shadow .ltx-hex-inner:before {
-            background-color: var(--pr);
-        }
-
-        .services-sc.layout-icon-row article .ltx-hex-white {
-            top: 0;
-            left: 0;
-            position: absolute;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-        }
-
-        .services-sc.layout-icon-row article .ltx-hex-white .ltx-hex-inner:before {
-            background-color: var(--br);
-        }
-
-        .services-sc.layout-icon-row article .ltx-hex-gray {
-            top: 18px;
-            left: 10px;
-            position: absolute;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-            width: 130px;
-            height: 125.88px;
-        }
-
-        .legenda{ position: fixed; top: 60px; left: 42%; padding: 0  0 10px 10px; width: 280px; height: 27px; background-color: #00000030; }
+        .legenda{ position: fixed; bottom: 0; left: 42%; padding: 0  0 10px 10px; width: 280px; height: 27px; background-color: #00000030; }
         .legenda .leg ul{ margin: 0; padding: 0; }
         .legenda .leg ul li{ list-style: none; display: inline; margin-right: 20px; }
         .legenda .leg ul li i{ text-shadow: 0px 0px 3px var(--cz-3); }
-        .legenda .leg ul li span{ margin-left: 10px; color: #333; font-size: 12px; }
+        .legenda .leg ul li span{ margin-left: 10px; color: #333; font-size: 13px; }
+
+        .info{ background:url(img/bg.png) center top; background-size: cover; position: absolute; z-index: 99; filter: drop-shadow(2px 2px 2px #00000050); }
+        .info ul li small{ color: #007bff; font-size: 13px; }
 
         @media (max-width: 2000px) {
-            .services-sc.layout-icon-row article .ltx-hex-wrapper,
-            .services-sc.layout-icon-row article .ltx-hex {
-                width: 170px;
-                height: 182.52px;
-                margin: 0 10% 0 !important;
-            }
-
-            .services-sc.layout-icon-row article .ltx-hex-gray {
-                top: 18px;
-                left: 10px;
-                width: 150px;
-                height: 145.88px;
-            }
-
-            .info ul{ position: absolute; margin:26px 0 0 32px; padding:0; width: 108px; }
-            .info ul li{ list-style: none; text-align: center; font-size: 18px; line-height: 16px; font-weight: 500; }
+            .info{ width: 180px; height: 200px; }
+            .info ul{ position: absolute; margin:40px 0 0 32px; padding:0; width: 108px; }
+            .info ul li{ list-style: none; text-align: center; font-size: 18px; line-height: 20px; font-weight: 500; }
             .info .icon{ margin-top: 20px; font-size: 22px; height: 32px; line-height: 21px; }
             .info ul .led{ font-size: 24px !important; margin-top: 40px; text-shadow: 0px 0px 3px var(--cz-3); }
 
@@ -155,72 +57,33 @@
             .legenda{ left: 42%; }
         } 
 
-        @media (max-width: 1650px) {
-            .services-sc.layout-icon-row article .ltx-hex-wrapper,
-            .services-sc.layout-icon-row article .ltx-hex {
-                width: 140px;
-                height: 160.52px;
-                margin: 0 0 0 20px!important;
-            }
-
-            .services-sc.layout-icon-row article .ltx-hex-gray {
-                top: 18px;
-                left: 8px;
-                width: 124px;
-                height: 125.88px;
-            }
-
-            .info ul{ position: absolute; margin:26px 0 0 21px; padding:0; width: 108px; }
-            .info ul li{ list-style: none; text-align: center; font-size: 16px; line-height: 18px; font-weight: 500; }
-            .info .icon{ margin-top: 10px; font-size: 16px; height: 32px; line-height: 18px; }
+        @media (max-width: 1850px) {
+            .info{ width: 160px; height: 180px; }
+            .info ul{ position: absolute; margin:34px 0 0 21px; padding:0; width: 108px; }
+            .info ul li{ list-style: none; text-align: center; font-size: 16px; line-height: 20px; font-weight: 500; }
+            .info .icon{ margin-top: 10px; font-size: 20px; height: 47px; line-height: 20px; }
             .info ul .led{ font-size: 20px !important; margin-top: 24px; text-shadow: 0px 0px 3px var(--cz-3); }
 
             .cell{ height: 130px; margin: 0 10px; }
             .legenda{ left: 40%; }
         }
 
-        @media (max-width: 1350px) {
-            .services-sc.layout-icon-row article .ltx-hex-wrapper,
-            .services-sc.layout-icon-row article .ltx-hex {
-                width: 120px;
-                height: 160.52px;
-                margin: 0 0 0 20px!important;
-            }
-
-            .services-sc.layout-icon-row article .ltx-hex-gray {
-                top: 18px;
-                left: 8px;
-                width: 104px;
-                height: 125.88px;
-            }
-
-            .info ul{ position: absolute; margin:38px 0 0 11px; padding:0; width: 108px; }
-            .info ul li{ list-style: none; text-align: center; font-size: 12px; line-height: 14px; font-weight: 600; }
-            .info .icon{ margin-top: 10px; font-size: 14px; height: 24px; line-height: 16px; }
+        @media (max-width: 1700px) {
+            .info{ width: 140px; height: 160px; }
+            .info ul{ position: absolute; margin:36px 0 0 11px; padding:0; width: 108px; }
+            .info ul li{ list-style: none; text-align: center; font-size: 13px; line-height: 17px; font-weight: 600; }
+            .info .icon{ margin-top: 10px; font-size: 18px; height: 35px; line-height: 19px; }
             .info ul .led{ font-size: 20px !important; margin-top: 18px; text-shadow: 0px 0px 3px var(--cz-3); }
 
             .cell{ height: 130px; }
             .legenda{ left: 38%; }
         }
 
-        @media (max-width: 1200px) {
-            .services-sc.layout-icon-row article .ltx-hex-wrapper,
-            .services-sc.layout-icon-row article .ltx-hex {
-                width: 120px;
-                height: 160.52px;
-                margin: 0 0 0 -3px!important;
-            }
-
-            .services-sc.layout-icon-row article .ltx-hex-gray {
-                top: 18px;
-                left: 8px;
-                width: 104px;
-                height: 125.88px;
-            }
-
-            .info ul{ position: absolute; margin:38px 0 0 -12px; padding:0; width: 108px; }
+        @media (max-width: 1470px) {
+            .info{ width: 120px; height: 140px; }
+            .info ul{ position: absolute; margin:36px 0 0 4px; padding:0; width: 108px; }
             .info ul li{ list-style: none; text-align: center; font-size: 12px; line-height: 14px; font-weight: 600; }
-            .info .icon{ margin-top: 10px; font-size: 14px; height: 21px; line-height: 16px; }
+            .info .icon{ margin-top: 10px; font-size: 16px; height: 19px; line-height: 16px; }
             .info ul .led{ font-size: 20px !important; margin-top: 21px; text-shadow: 0px 0px 3px var(--cz-3); }
 
             .cell{ height: 130px; }
@@ -228,7 +91,6 @@
         }
 
         .overlay{ position: fixed; top:0; left: 33%; border-left: 1px solid var(--cy-dark); border-right: 1px solid var(--cy-dark); background-color: rgba(111, 207, 236, 0.1); height: 100%; width: 33%; right: 0; }
-        .info{ position: absolute; z-index: 99;}
         #favoModelo{ display: none !important; }
         .cell{ cursor: pointer; }
 
@@ -238,7 +100,7 @@
         }
         .brand {
             position: absolute;
-            left: 50%;
+            left: 45%;
             margin-left: -114px !important;
             display: block;
         }
@@ -248,7 +110,7 @@
         const tempoRefresh = 5;
 
         $a(document).ready(function(){
-            const stringJSON = '{"autorizando": [{"lote": "L.1","quadra": "B.12","restaurante": "Village Fast Food","link": "index.html","status": "warning"},{"lote": "L.2","quadra": "B.22","restaurante": "Roda Pizza","link": "index.html","status": "check"},{"lote": "L.3","quadra": "B.32","restaurante": "Mac Donalds","link": "index.html","status": "blank"}],"chegando": [{"lote": "L.3","quadra": "B.33","restaurante": "Trindade Fast Food","link": "index.html","status": "warning"}],"aqui": [{"lote": "L.3","quadra": "B.33","restaurante": "Trindade Fast Food","link": "index.html","status": "check"}]}';
+            const stringJSON = '{"autorizando": [{"lote": "L.1","quadra": "B.12","restaurante": "Village Fast Food","link": "index.html","status": "warning","tempo":"0:22:32"},{"lote": "L.2","quadra": "B.22","restaurante": "Roda Pizza","link": "index.html","status": "check","tempo":"0:34:12"},{"lote": "L.3","quadra": "B.32","restaurante": "Mac Donalds","link": "index.html","status": "blank","tempo":"0:55:15"}],"chegando": [{"lote": "L.3","quadra": "B.33","restaurante": "Trindade Fast Food","link": "index.html","status": "warning","tempo":"0:10:17"}],"aqui": [{"lote": "L.3","quadra": "B.33","restaurante": "Trindade Fast Food","link": "index.html","status": "check","tempo":"0:30:12"}]}';
             const jsonPython = JSON.parse(stringJSON);
             goLive(jsonPython);                 
         });
@@ -294,6 +156,7 @@
             favo = favo.replace(/##lote##/g,json.lote);
             favo = favo.replace(/##restaurante##/g,json.restaurante);
             favo = favo.replace(/##link##/g,json.link);
+            favo = favo.replace(/##tempo##/g,json.tempo);
 
             if(json.status === "warning")
                 favo = favo.replace(/##status##/g,"exclamation-triangle am");
@@ -309,29 +172,35 @@
     <nav class="navbar navbar-dark bg-dark text-center">
         <a class="navbar-brand brand" href="#">
             <img src="img/logo-br.png" alt="">
-            <span class="">Security Fast Pass</span>
+            <span class="">Security Fast Pass | Painel de Entregas</span>
         </a>
     </nav>
     <div class="container">
         <div class="row">
             <div id="autorizando" class="col-4">
-                <div class="numero">
-                    <h1 class="quantidade text-center mt-3"></h1>
-                    <h3 class="label text-center"></h3>
+                <div class="numero text-center">
+                    <ul>
+                        <li class="quantidade text-center"></li>
+                        <li class="label text-center"></li>
+                    </ul>                    
                 </div>
                 <div class="favos services-sc layout-icon-row ltx-style-gray row"></div>
             </div>
             <div id="chegando" class="col-4 h-100">
-                <div class="numero">
-                    <h1 class="quantidade text-center mt-3"></h1>
-                    <h3 class="label text-center"></h3>
+                <div class="numero text-center">
+                    <ul>
+                        <li class="quantidade text-center"></li>
+                        <li class="label text-center"></li>
+                    </ul>   
                 </div>
                 <div class="favos services-sc layout-icon-row ltx-style-gray row"></div>
             </div>
             <div id="aqui" class="col-4">
-                <div class="numero">
-                    <h1 class="quantidade text-center mt-3"></h1>
-                    <h3 class="label text-center"></h3>
+                <div class="numero text-center">
+                    <ul>
+                        <li class="quantidade text-center"></li>
+                        <li class="label text-center"></li>
+                    </ul>   
                 </div>
                 <div class="favos services-sc layout-icon-row ltx-style-gray row"></div>
             </div>
@@ -341,7 +210,7 @@
         <div class="leg">
             <ul>
                 <li class="led"><i class="fas fa-exclamation-triangle am"></i><span>Processo Incompleto</span></li>
-                <li class="led"><i class="fas fa-check-circle vd"></i><span>Sucesso</span></li>
+                <li class="led"><i class="fas fa-check-circle vd"></i><span>Pronto</span></li>
             </ul>
         </div>
     </div>
@@ -352,17 +221,10 @@
                 <ul>
                     <li>##quadra##</li>
                     <li>##lote##</li>
-                    <li class="icon">##restaurante##</li>
+                    <li class="icon">##restaurante## <br><small>##tempo##</small></li>
                     <li class="led"><i class="fas fa-##status##"></i></li>
                 </ul>
             </div>
-            <article class="services">
-                <span class="ltx-hex-wrapper">
-                    <span class="ltx-hex ltx-hex-shadow"><span class="ltx-hex-inner"></span></span>
-                    <span class="ltx-hex ltx-hex-white"><span class="ltx-hex-inner"></span></span>
-                    <span class="ltx-hex ltx-hex-gray"><span class="ltx-hex-inner"></span></span>
-                </span>
-            </article>
         </div> 
     </div>
     <!-- FIM FAVO MODELO -->

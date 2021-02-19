@@ -20,6 +20,7 @@
         .bg-br{ background-color: #FFF; color: #000; }
         .bl-vd{ border-left: 5px solid #0ED145; }
         .bl-lr{ border-left: 5px solid #d1b40e; }
+        .bl-cz{ border-left: 5px solid #ada88e; }
         .auth{ font-size: 16px; color: #000; }
         .auth small{ font-size: 16px; padding-left: 5px; }
         .icon{ margin: 10px; font-size: 24px; color:#000 !important; }
@@ -29,8 +30,8 @@
         .arrows{ border-top: 40px solid transparent; border-bottom: 40px solid transparent; }
         .arrow-right{ border-left: 40px solid #0ED145; }
         .arrow-left{ border-right: 40px solid #F00; }
-        .info{ font-size: 16px; font-style: italic; }
-        .info small{ font-size:12px; font-style: normal !important; color: #666 !important; }
+        .info{ font-size: 24px; font-style: italic; }
+        .info small{ font-size:13px; font-style: normal !important; color: rgb(0, 0, 0) !important; font-weight: 600; }
         .arrow-down { position: relative; margin-left: 40px; content: ""; display: inline-block; width: 35px;  height: 35px; border-right: 0.4em solid #6b6b6b; border-top: 0.4em solid #6b6b6b; transform: rotate(135deg); }
         *{ outline: none; }
         @media (min-width: 576px){
@@ -53,13 +54,13 @@
     <div class="container">
         
         <div class="row mt-2">
-            <div class="col-12 p-2 bg-br info bl-lr">
+            <div class="col-12 p-2 bg-br info bl-cz">
                 <small>Origem:</small><br>
                 Lorem ipsum
             </div>
         </div>
         <div class="row mt-2">
-            <div class="col-12 p-2 bg-br info bl-vd">
+            <div class="col-12 p-2 bg-br info bl-cz">
                 <small>Destino:</small><br>
                 Dolor sit amet
             </div>
@@ -67,10 +68,10 @@
         <div class="row mt-2">
             <form method ="post" action='/onboarding/{{delivery_transaction_id}}'></form>
                 <div class="col-4 p-0">
-                    <button type="submit" name="checkin_liberado" value="checkin_liberado" class="inputs bg-vd btns float-left text-center">LIBERAR</button>
+                    <button type="submit" name="checkin_liberado" value="checkin_liberado" class="inputs bg-vd btns float-left text-center">AUTORIZAR</button>
                 </div>
                 <div class="col-4">
-                    <div class="text-center centro">ENTRADA</div>
+                    <div class="text-center centro">AUTORIZAÇÃO</div>
                 </div>
                 <div class="col-4 p-0">
                     <button type="submit" name="checkin_rejeitado" value="checkin_rejeitado" class="inputs bg-vm btns float-right text-center">REJEITAR</button>
