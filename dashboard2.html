@@ -12,6 +12,7 @@
     <style>
         :root {
             --main: #EB6D2F;
+            --lr: #F92;
             --am: #FD0;
             --cz: #F8F7F1;
             --cz-1: #CCC;
@@ -21,6 +22,7 @@
             --cy-dark: #4bafaf;
             --br: #ffffff;
             --pr: #5A3733;
+            --pt: #000;
         }
 
         .vd{ color: #0F0; }
@@ -44,14 +46,18 @@
         .legenda .leg ul li span{ margin-left: 10px; color: #333; font-size: 13px; }
 
         .info{ background:url(img/bg.png) center top; background-size: cover; position: absolute; z-index: 99; filter: drop-shadow(2px 2px 2px #00000050); }
-        .info ul li small{ color: #007bff; font-size: 13px; }
+        .info .icon ul{ margin:0; margin-top: 10px; padding: 0; }
+        .info .icon ul li{ list-style: none; display:list-item; font-size: 11px; line-height: 12px; color: var(--lr); font-weight: normal; font-style: italic; }
+
+        .active{ color: var(--pt) !important; font-weight: 500 !important; font-style: normal !important; font-size: 12px !important; }
+        .timeover{ color:#F00 !important; font-weight: 700 !important;}
 
         @media (max-width: 2000px) {
             .info{ width: 180px; height: 200px; }
             .info ul{ position: absolute; margin:40px 0 0 32px; padding:0; width: 108px; }
             .info ul li{ list-style: none; text-align: center; font-size: 18px; line-height: 20px; font-weight: 500; }
-            .info .icon{ margin-top: 20px; font-size: 22px; height: 32px; line-height: 21px; }
-            .info ul .led{ font-size: 24px !important; margin-top: 40px; text-shadow: 0px 0px 3px var(--cz-3); }
+            .info .icon{ margin-top: 10px; font-size: 22px; height: 32px; line-height: 21px; }
+            .info ul .led{ font-size: 24px !important; margin-bottom: 10px; margin-top: -30px; text-shadow: 0px 0px 3px var(--cz-3); }
 
             .cell{ height: 220px; margin: 0 15px; }
             .legenda{ left: 42%; }
@@ -61,8 +67,8 @@
             .info{ width: 160px; height: 180px; }
             .info ul{ position: absolute; margin:34px 0 0 21px; padding:0; width: 108px; }
             .info ul li{ list-style: none; text-align: center; font-size: 16px; line-height: 20px; font-weight: 500; }
-            .info .icon{ margin-top: 10px; font-size: 20px; height: 47px; line-height: 20px; }
-            .info ul .led{ font-size: 20px !important; margin-top: 24px; text-shadow: 0px 0px 3px var(--cz-3); }
+            .info .icon{ margin-top: 5px; font-size: 20px; height: 47px; line-height: 20px; }
+            .info ul .led{ font-size: 20px !important; margin-top: -24px; margin-bottom: 10px; text-shadow: 0px 0px 3px var(--cz-3); }
 
             .cell{ height: 130px; margin: 0 10px; }
             .legenda{ left: 40%; }
@@ -72,8 +78,10 @@
             .info{ width: 140px; height: 160px; }
             .info ul{ position: absolute; margin:36px 0 0 11px; padding:0; width: 108px; }
             .info ul li{ list-style: none; text-align: center; font-size: 13px; line-height: 17px; font-weight: 600; }
-            .info .icon{ margin-top: 10px; font-size: 18px; height: 35px; line-height: 19px; }
-            .info ul .led{ font-size: 20px !important; margin-top: 18px; text-shadow: 0px 0px 3px var(--cz-3); }
+            .info .icon{ margin-top: 4px; font-size: 18px; height: 35px; line-height: 19px; }
+            .info .icon ul{ margin-top: 7px; }
+            .info .icon ul li{ font-size: 10px; line-height: 10px; }
+            .info ul .led{ font-size: 20px !important; margin-top: -25px; margin-bottom: 10px; text-shadow: 0px 0px 3px var(--cz-3); }
 
             .cell{ height: 130px; }
             .legenda{ left: 38%; }
@@ -83,8 +91,10 @@
             .info{ width: 120px; height: 140px; }
             .info ul{ position: absolute; margin:36px 0 0 4px; padding:0; width: 108px; }
             .info ul li{ list-style: none; text-align: center; font-size: 12px; line-height: 14px; font-weight: 600; }
-            .info .icon{ margin-top: 10px; font-size: 16px; height: 19px; line-height: 16px; }
-            .info ul .led{ font-size: 20px !important; margin-top: 21px; text-shadow: 0px 0px 3px var(--cz-3); }
+            .info .icon{ margin-top: 4px; font-size: 16px; height: 19px; line-height: 16px; }
+            .info .icon ul{ margin-top: 2px; }
+            .info .icon ul li{ font-size: 10px; line-height: 10px; }
+            .info ul .led{ font-size: 20px !important; margin-top: -26px; margin-bottom: 10px; text-shadow: 0px 0px 3px var(--cz-3); }
 
             .cell{ height: 130px; }
             .legenda{ left: 36%; }
@@ -110,7 +120,7 @@
         const tempoRefresh = 5;
 
         $a(document).ready(function(){
-            const stringJSON = '{"autorizando": [{"lote": "L.1","quadra": "B.12","restaurante": "Village Fast Food","link": "index.html","status": "warning","tempo":"0:22:32"},{"lote": "L.2","quadra": "B.22","restaurante": "Roda Pizza","link": "index.html","status": "check","tempo":"0:34:12"},{"lote": "L.3","quadra": "B.32","restaurante": "Mac Donalds","link": "index.html","status": "blank","tempo":"0:55:15"}],"chegando": [{"lote": "L.3","quadra": "B.33","restaurante": "Trindade Fast Food","link": "index.html","status": "warning","tempo":"0:10:17"}],"aqui": [{"lote": "L.3","quadra": "B.33","restaurante": "Trindade Fast Food","link": "index.html","status": "check","tempo":"0:30:12"}]}';
+            const stringJSON = '{"autorizando": [{"lote": "L.1","quadra": "B.12","restaurante": "Village Fast Food","link": "index.html","status": "warning","tempo1":"0:22:32","tempo2":"0:00:00","tempo3":"0:00:00","timeover":false},{"lote": "L.2","quadra": "B.22","restaurante": "Roda Pizza","link": "index.html","status": "check","tempo1":"0:32:11","tempo2":"0:00:00","tempo3":"0:00:00","timeover":false},{"lote": "L.3","quadra": "B.32","restaurante": "Mac Donalds","link": "index.html","status": "blank","tempo1":"0:55:15","tempo2":"0:00:00","tempo3":"0:00:00","timeover":true}],"chegando": [{"lote": "L.3","quadra": "B.33","restaurante": "Trindade Fast Food","link": "index.html","status": "warning","tempo1":"0:22:32","tempo2":"0:33:01","tempo3":"0:00:00","timeover":false}],"aqui": [{"lote": "L.3","quadra": "B.33","restaurante": "Trindade Fast Food","link": "index.html","status": "check","tempo1":"0:22:32","tempo2":"0:13:10","tempo3":"0:44:20","timeover":true}]}';
             const jsonPython = JSON.parse(stringJSON);
             goLive(jsonPython);                 
         });
@@ -120,10 +130,10 @@
             createFavos(jsonPython);
 
             // REFRESH CONTÍNUO
-            setInterval(function(){
-                createFavos(jsonPython);
-                // console.log("Refresh!");
-            },tempoRefresh*1000);  
+            // setInterval(function(){
+            //     createFavos(jsonPython);
+            //     // console.log("Refresh!");
+            // },tempoRefresh*1000);  
         }
 
         function createFavos(json){
@@ -136,13 +146,13 @@
             $a("#aqui .label").text("Dentro do Condomínio");
 
             for(let i=0;i<json.autorizando.length;i++)
-                $a("#autorizando .favos").append(getTemplateFavo(json.autorizando[i]));
+                $a("#autorizando .favos").append(getTemplateFavo(json.autorizando[i],"autorizando"));
 
             for(let i=0;i<json.chegando.length;i++)
-                $a("#chegando .favos").append(getTemplateFavo(json.chegando[i]));
+                $a("#chegando .favos").append(getTemplateFavo(json.chegando[i],"chegando"));
 
             for(let i=0;i<json.aqui.length;i++)
-                $a("#aqui .favos").append(getTemplateFavo(json.aqui[i]));
+                $a("#aqui .favos").append(getTemplateFavo(json.aqui[i],"aqui"));
 
             $a(".cell").click(function(){
                 if($a(this).attr("rel"))
@@ -150,13 +160,31 @@
             });
         }
 
-        function getTemplateFavo(json){
+        function getTemplateFavo(json,pool){
             let favo = $a("#favoModelo").html();
             favo = favo.replace(/##quadra##/g,json.quadra);
             favo = favo.replace(/##lote##/g,json.lote);
             favo = favo.replace(/##restaurante##/g,json.restaurante);
             favo = favo.replace(/##link##/g,json.link);
-            favo = favo.replace(/##tempo##/g,json.tempo);
+            favo = favo.replace(/##tempo1##/g,json.tempo1);
+            favo = favo.replace(/##tempo2##/g,json.tempo2);
+            favo = favo.replace(/##tempo3##/g,json.tempo3);
+
+            const timeover = (json.timeover) ? "timeover" : "";
+
+            if(pool === "autorizando"){
+                favo = favo.replace(/##t1##/g,"active "+timeover);
+                favo = favo.replace(/##t2##/g,"");
+                favo = favo.replace(/##t3##/g,"");
+            }else if(pool === "chegando"){
+                favo = favo.replace(/##t1##/g,"");
+                favo = favo.replace(/##t2##/g,"active "+timeover);
+                favo = favo.replace(/##t3##/g,"");
+            }else{
+                favo = favo.replace(/##t1##/g,"");
+                favo = favo.replace(/##t2##/g,"");
+                favo = favo.replace(/##t3##/g,"active "+timeover);
+            }
 
             if(json.status === "warning")
                 favo = favo.replace(/##status##/g,"exclamation-triangle am");
@@ -219,10 +247,16 @@
         <div rel="##link##" title="Clique para verificar!" class="col-3 mb-2 cell">
             <div class="info">
                 <ul>
+                    <li class="led"><i class="fas fa-##status##"></i></li>
                     <li>##quadra##</li>
                     <li>##lote##</li>
-                    <li class="icon">##restaurante## <br><small>##tempo##</small></li>
-                    <li class="led"><i class="fas fa-##status##"></i></li>
+                    <li class="icon">##restaurante## 
+                        <ul>
+                            <li class="##t1##">##tempo1##</li>
+                            <li class="##t2##">##tempo2##</li>
+                            <li class="##t3##">##tempo3##</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div> 
