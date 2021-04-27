@@ -41,12 +41,15 @@
         .close span{ color: var(--vm); }
         .verso{ position: absolute; width: 18rem; height: 412px; background-color: #FFF; display: none; }
         .verso .card-title{ color: var(--cy); }
+        .result{ height: 165px; }
         .result .table thead th,
         .resultVerso .table thead th{ border-bottom: 0; font-size: 11px; }
         .result .table td,
         .resultVerso .table td{ padding: 0; }
         .infoLote{ font-size: 11px; padding-top: 5px !important; }
         .resultVerso{ height: 320px; overflow-y: scroll; width: 270px; margin-left: -13px; }
+        .red{ border: 1px solid #F00 !important; }
+        .warning{ font-size: 11px; color: #F00; height: 10px; }
 
         @media (max-width: 720px) {
             .brand{ left: 35% !important; font-size: 15px; }
@@ -79,14 +82,31 @@
         function setReady(id){
             const proprietario = $a("#"+id).find($a("[name=proprietario]")).val();
             const lote = $a("#"+id).find($a("[name=lote]")).val();
+            const fields = ["proprietario","lote"];
+
+            let fail = false;
+            for(let i=0;i<fields.length;i++){
+                $a("#"+id).find($a("[name="+fields[i]+"]")).removeClass("red");
+                $a("#"+id).find(".warning").text("");
+                const field = $a("#"+id).find($a("[name="+fields[i]+"]")).val();
+
+                if(!field){
+                    $a("#"+id).find($a("[name="+fields[i]+"]")).addClass("red");
+                    $a("#"+id).find(".warning").text("Campos obrigatórios");
+                    fail = true;
+                }
+            }
+
+            if(fail)
+                return;
 
             if(!urlEnvio){
-                console.error("URL de envio indefinida!");
+                $a("#"+id).find(".warning").text("Requisição não configurada");
                 return;
             }
         
             $a.getJSON(urlEnvio,function(json){
-                $a("#"+id).find(".result").html("<div class='ready'>Pronto!</div>");
+                $a("#"+id).find(".result").html("<div class='ready'>"+json.result+"</div>");
             });
         }
 
@@ -141,6 +161,7 @@
             html += '                   <p class="card-text">';
             html += '                       <input type="text" placeholder="Proprietário" value="" name="proprietario">';
             html += '                       <input type="text" placeholder="Lote/Casa" value="" name="lote">';
+            html += '                       <div class="warning"></div>';
             html += '                   </p>';
             html += '                   <a href="#" onclick="setReady('+json.id+');" class="enviar btn btn-primary">Enviar</a>';
             html += '               </div>';
