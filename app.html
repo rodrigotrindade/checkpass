@@ -71,9 +71,9 @@
         
         const json = JSON.parse(stringJSON);
         const velocScale = VELOC_MAX_PERMITIDA+10;
-        const velocVerde = [VELOC_MAX_PERMITIDA-VELOC_OFFSET,VELOC_MAX_PERMITIDA];
-        const velocAmarela = [VELOC_MAX_PERMITIDA,VELOC_MAX_PERMITIDA+VELOC_OFFSET];
-        const velocVermelha = [VELOC_MAX_PERMITIDA+VELOC_OFFSET,velocScale]; 
+        const velocVerde = [VELOC_MAX_PERMITIDA-(VELOC_OFFSET)*2,VELOC_MAX_PERMITIDA];
+        const velocAmarela = [VELOC_MAX_PERMITIDA-VELOC_OFFSET,VELOC_MAX_PERMITIDA];
+        const velocVermelha = [VELOC_MAX_PERMITIDA,velocScale]; 
         let maxVel = 0;
         let maxTime = 0;
 
